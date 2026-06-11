@@ -36,4 +36,7 @@ exports.AppModule = AppModule = __decorate([
             auth_module_1.AuthModule,
         ],
         controllers: [app_controller_1.AppController],
-  
+        providers: [app_service_1.AppService],
+    })
+], AppModule);
+//# sourceMappingURL=app.module.js.map
