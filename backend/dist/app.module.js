@@ -24,12 +24,8 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             config_1.ConfigModule.forRoot({ isGlobal: true }),
             typeorm_1.TypeOrmModule.forRoot({
-                type: 'postgres',
-                host: process.env.DB_HOST || 'localhost',
-                port: parseInt(process.env.DB_PORT || '5432', 10),
-                username: process.env.DB_USERNAME || 'postgres',
-                password: process.env.DB_PASSWORD || 'postgres',
-                database: process.env.DB_DATABASE || 'fm_digital_bank',
+                type: 'better-sqlite3',
+                database: 'fm_digital_bank.sqlite',
                 entities: [user_entity_1.User, wallet_entity_1.Wallet, transaction_entity_1.Transaction],
                 synchronize: true,
             }),
