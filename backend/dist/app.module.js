@@ -24,8 +24,12 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             config_1.ConfigModule.forRoot({ isGlobal: true }),
             typeorm_1.TypeOrmModule.forRoot({
-                type: 'better-sqlite3',
-                database: 'fm_digital_bank.sqlite',
+                type: 'mysql',
+                host: process.env.DB_HOST || 'localhost',
+                port: parseInt(process.env.DB_PORT) || 3306,
+                username: process.env.DB_USERNAME || 'root',
+                password: process.env.DB_PASSWORD || '',
+                database: process.env.DB_DATABASE || 'fm_digital_bank',
                 entities: [user_entity_1.User, wallet_entity_1.Wallet, transaction_entity_1.Transaction],
                 synchronize: true,
             }),
