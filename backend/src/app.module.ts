@@ -12,8 +12,12 @@ import { Transaction } from './modules/transactions/entities/transaction.entity'
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
-      type: 'better-sqlite3',
-      database: 'fm_digital_bank.sqlite',
+      type: 'mysql',
+      host: process.env.DB_HOST || 'localhost',
+      port: parseInt(process.env.DB_PORT) || 3306,
+      username: process.env.DB_USERNAME || 'root',
+      password: process.env.DB_PASSWORD || '',
+      database: process.env.DB_DATABASE || 'fm_digital_bank',
       entities: [User, Wallet, Transaction],
       synchronize: true, // Dev only - auto creates tables
     }),
