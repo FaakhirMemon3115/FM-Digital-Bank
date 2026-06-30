@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 import { Wallet } from '../../wallets/entities/wallet.entity';
-import { Transaction } from '../../transactions/entities/transaction.entity';
+
 
 @Entity('users')
 export class User {
