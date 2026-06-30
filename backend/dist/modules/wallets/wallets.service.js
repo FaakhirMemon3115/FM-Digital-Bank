@@ -31,7 +31,7 @@ let WalletsService = class WalletsService {
     async getMyWallet(userId) {
         const wallet = await this.walletRepository.findOne({
             where: { userId },
-            relations: ['user'],
+            relations: { user: true },
         });
         if (!wallet)
             throw new common_1.NotFoundException('Wallet not found');

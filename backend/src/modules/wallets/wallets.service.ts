@@ -23,7 +23,7 @@ export class WalletsService {
   async getMyWallet(userId: string) {
     const wallet = await this.walletRepository.findOne({
       where: { userId },
-      relations: ['user'],
+      relations: { user: true },
     });
     if (!wallet) throw new NotFoundException('Wallet not found');
     return wallet;
