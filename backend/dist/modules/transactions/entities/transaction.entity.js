@@ -23,6 +23,7 @@ let Transaction = class Transaction {
     fee;
     transactionType;
     status;
+    description;
     createdAt;
 };
 exports.Transaction = Transaction;
@@ -68,6 +69,10 @@ __decorate([
     (0, typeorm_1.Column)({ default: 'pending' }),
     __metadata("design:type", String)
 ], Transaction.prototype, "status", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Transaction.prototype, "description", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)({ name: 'created_at' }),
     __metadata("design:type", Date)

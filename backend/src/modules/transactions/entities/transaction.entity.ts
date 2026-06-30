@@ -35,6 +35,9 @@ export class Transaction {
   @Column({ default: 'pending' }) // pending, completed, failed
   status: string;
 
+  @Column({ nullable: true })
+  description: string;
+
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 }

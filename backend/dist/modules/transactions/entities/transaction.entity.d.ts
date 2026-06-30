@@ -10,5 +10,6 @@ export declare class Transaction {
     fee: number;
     transactionType: string;
     status: string;
+    description: string;
     createdAt: Date;
 }

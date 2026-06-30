@@ -13,6 +13,7 @@ const typeorm_1 = require("@nestjs/typeorm");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const auth_module_1 = require("./modules/auth/auth.module");
+const wallets_module_1 = require("./modules/wallets/wallets.module");
 const user_entity_1 = require("./modules/users/entities/user.entity");
 const wallet_entity_1 = require("./modules/wallets/entities/wallet.entity");
 const transaction_entity_1 = require("./modules/transactions/entities/transaction.entity");
@@ -34,6 +35,7 @@ exports.AppModule = AppModule = __decorate([
                 synchronize: true,
             }),
             auth_module_1.AuthModule,
+            wallets_module_1.WalletsModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
